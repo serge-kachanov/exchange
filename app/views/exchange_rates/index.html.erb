@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exchange Rates €/$</h1>
+
+<td><%= link_to 'Fetch Exchange Rates', fetch_exchange_rates_exchange_rates_url %></td>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_tag(exchange_rates_path, method: 'get', id: 'exchange-form') do %>
+  <%= number_field_tag :amount, params[:amount], placeholder: "Enter amount of Euro" %>
+  <%= date_field_tag :date, params[:date], placeholder: "Enter date" %>
+  <%= submit_tag "Exchange", name: nil %>
+<% end %>
+
+<br>
+Picked date: <%= @date %>
+<br>
+Picked amount: €<%= @amount %>
+<br>
+Summ: $<%= @result %>
