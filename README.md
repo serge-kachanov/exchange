@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this project you need to:
 
-Things you may want to cover:
+* clone repo
 
-* Ruby version
+* run 'bundle install' in project folder
 
-* System dependencies
+* run 'rake db:migrate'
 
-* Configuration
+* run 'rails s'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* go to 'localhost:3000'
