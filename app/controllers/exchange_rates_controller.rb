@@ -3,9 +3,7 @@ class ExchangeRatesController < ApplicationController
 
   def index
     @exchange_rate = ExchangeRate.find_rate(permitted_params[:date])
-    if @exchange_rate
-      @summ = ExchangeRate.convert(@exchange_rate.rate, @amount)
-    end
+    @summ = ExchangeRate.convert(@exchange_rate.rate, @amount) if @exchange_rate
   end
 
   def fetch_exchange_rates
