@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe ExchangeRatesController, type: :controller do
-
   describe '#index' do
     let!(:exchange_rates) { FactoryBot.create_list(:exchange_rate, 10) }
 

@@ -18,7 +18,7 @@ describe CsvProcessorService, type: :service do
 
   describe '.create_exchange_rates' do
     it 'should fill database from array' do
-      array = [["2019-12-21","1,1839"], ["2020-12-20", "1,1859"]]
+      array = [['2019-12-21', '1,1839'], ['2020-12-20', '1,1859']]
       expect { described_class.create_exchange_rates(array) } .to change { ExchangeRate.count } .by 2
     end
   end

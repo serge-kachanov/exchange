@@ -18,6 +18,6 @@ class ExchangeRatesController < ApplicationController
   end
 
   def set_defaults
-    permitted_params[:amount] ? @amount = permitted_params[:amount].to_f : @amount = 100
+    @amount = permitted_params[:amount] ? permitted_params[:amount].to_f : 100
   end
 end

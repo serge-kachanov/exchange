@@ -3,9 +3,8 @@
 require 'rails_helper'
 
 describe ExchangeRate, type: :model do
-  let!(:exchange_rates)  { FactoryBot.create_list(:exchange_rate, 10) }
+  let!(:exchange_rates) { FactoryBot.create_list(:exchange_rate, 10) }
   let(:exchange_rate) { exchange_rates.first }
-
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:rate) }
@@ -21,7 +20,7 @@ describe ExchangeRate, type: :model do
 
     context 'should find first exchange_rate' do
       before { exchange_rate }
-      
+
       it 'by empty date' do
         expect(described_class.find_rate('')).to eql exchange_rate
       end
@@ -34,7 +33,7 @@ describe ExchangeRate, type: :model do
 
   describe '.convert' do
     it 'should convert provided amount with provided rate' do
-      ExchangeRate.convert(2,2).should == 4
+      ExchangeRate.convert(2, 2).should == 4
     end
   end
 end
